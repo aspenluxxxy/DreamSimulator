@@ -51,6 +51,7 @@ body {
 .dreamsim__stat-container {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .dreamsim__stat-container > img {
