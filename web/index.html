@@ -13,52 +13,53 @@
 		<script src="main.js"></script>
 	</head>
 	<body>
-		<div class="dreamsim-main">
-			<h1>Dream Simulator</h1>
-			<div class="center-container">
-				<div class="dreamsim-stats">
-					<p title="approximate 5% chance per barter">
+		<main class="dreamsim">
+			<h1 class="dreamsim__title">Dream Simulator</h1>
+            <div class="dreamsim__stats">
+					<div class="dreamsim__stat-container" title="approximate 5% chance per barter">
 						<img
 							width="48"
 							height="48"
 							style="vertical-align: middle"
 							src="res/blaze.png"
 						/>
-						Average <span id="avg-rods">0</span>, max
-						<span id="max-rods">0</span> out of 305
-					</p>
-					<p title="50% chance per blaze">
+                        <p class="dreamsim__stat-text">
+                            Average <span id="avg-rods">0</span>, max
+                            <span id="max-rods">0</span> out of 305
+                        </p>
+					</div>
+                    <div class="dreamsim__stat-container" title="50% chance per blaze">
 						<img
 							width="48"
 							height="48"
 							style="vertical-align: middle"
 							src="res/pearl.png"
 						/>
-						Average <span id="avg-pearls">0</span>, max
-						<span id="max-pearls">0</span> out of 262
-					</p>
-					<p><span id="iterations">0</span> iterations ran</p>
+                        <p class="dreamsim__stat-text">
+                            Average <span id="avg-pearls">0</span>, max
+                            <span id="max-pearls">0</span> out of 262
+                        </p>
+                    </div>
+					<p class="dreamsim__iterations"><span id="iterations" class="dreamsim__iterations-number">0</span> iterations ran</p>
 				</div>
 			</div>
-			<div class="dreamsim-toggle-container">
-				<div class="dreamsim-centered">
-					<button
-						type="button"
-						class="dreamsim-button dreamsim-start-button"
-						id="start-sim"
-					>
-						Start
-					</button>
-					<button
-						type="button"
-						class="dreamsim-button dreamsim-stop-button"
-						id="stop-sim"
-					>
-						Stop
-					</button>
-				</div>
+			<div class="dreamsim__buttons">
+                <button
+                    type="button"
+                    class="dreamsim__button dreamsim__button--start"
+                    id="start-sim"
+                >
+                    Start
+                </button>
+                <button
+                    type="button"
+                    class="dreamsim__button dreamsim__button--stop"
+                    id="stop-sim"
+                >
+                    Stop
+                </button>
 			</div>
-		</div>
+		</main>
 	</body>
 	<footer>
 		made by aspen |
