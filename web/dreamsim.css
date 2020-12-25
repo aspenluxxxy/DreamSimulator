@@ -1,23 +1,24 @@
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
 }
 
 html {
-    font-size: 62.5%;
+	font-size: 62.5%;
 
-    background-color: #1f1f1f;
-    box-sizing: border-box;
-
+	background-color: #1f1f1f;
+	box-sizing: border-box;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .dreamsim {
@@ -30,62 +31,67 @@ body {
 	text-align: center;
 	color: whitesmoke;
 
-    font-size: 1.6rem;
-    padding: 5rem 20rem
+	font-size: 1.6rem;
+	padding: 5rem 20rem;
 }
 
 @media only screen and (max-width: 41.25em) {
-    .dreamsim {
-        padding: 5rem 5rem;
-    }
+	.dreamsim {
+		padding: 5rem 5rem;
+	}
 }
 
 .dreamsim__title {
-    margin-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .dreamsim__stats {
-    margin-bottom: 3rem;
+	margin-bottom: 3rem;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-evenly;
+	-webkit-align-items: baseline;
+	align-items: baseline;
 }
 
-.dreamsim__stat-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.dreamsim__round {
+	flex: 1 1 auto;
+	padding: 3rem;
 }
 
-.dreamsim__stat-container > img {
-    margin-right: 1rem;
+.dreamsim__round + .dreamsim__round {
+	border-left: solid 1px white;
 }
 
 @media only screen and (max-width: 26.875em) {
-    .dreamsim__stat-container {
-        flex-direction: column;
-    }
+	.dreamsim__stat-container {
+		flex-direction: column;
+	}
 
-    .dreamsim__stat-container > img {
-        margin-right: 0;
-        margin-bottom: 1rem;
-    }
+	.dreamsim__stat-container > img {
+		margin-right: 0;
+		margin-bottom: 1rem;
+	}
 
-    .dreamsim__stat-text {
-        margin-bottom: 1rem;
-    }
+	.dreamsim__stat-text {
+		margin-bottom: 1rem;
+	}
 }
 
 .dreamsim__iterations {
-    margin: 1rem 0;
+	margin: 1rem 0;
 }
 
 .dreamsim__iterations-number {
-    font-size: 2rem;
+	font-size: 2rem;
 }
 
 @media only screen and (max-width: 26.875em) {
-    .dreamsim__iterations-number {
-        display: block;
-        margin-bottom: .5rem;
-    }
+	.dreamsim__iterations-number {
+		display: block;
+		margin-bottom: 0.5rem;
+	}
 }
 
 .dreamsim__buttons {
@@ -93,28 +99,28 @@ body {
 }
 
 @media only screen and (max-width: 36.25em) {
-    .dreamsim__buttons {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+	.dreamsim__buttons {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .dreamsim__button {
 	height: 50px;
-    width: 10rem;
-    border: none;
-    border-radius: 1.5rem;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
+	width: 10rem;
+	border: none;
+	border-radius: 1.5rem;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
-    .dreamsim__button:not(:last-child) {
-        margin-right: 2rem;
-    }
-    .dreamsim__button:hover {
-        opacity: .8;
-    }
+.dreamsim__button:not(:last-child) {
+	margin-right: 2rem;
+}
+.dreamsim__button:hover {
+	opacity: 0.8;
+}
 
 .dreamsim__button--start {
 	background-color: #4caf50;
@@ -125,10 +131,10 @@ body {
 }
 
 @media only screen and (max-width: 36.25em) {
-    .dreamsim__button:not(:last-child) {
-        margin-right: 0;
-        margin-bottom: 2rem;
-    }
+	.dreamsim__button:not(:last-child) {
+		margin-right: 0;
+		margin-bottom: 2rem;
+	}
 }
 
 footer {
@@ -137,9 +143,10 @@ footer {
 	width: 99%;
 	text-align: center;
 	color: whitesmoke;
-    font-size: 1.6rem;
+	font-size: 1.6rem;
 }
 
-a:link, a:visited {
-    color: grey;
+a:link,
+a:visited {
+	color: grey;
 }

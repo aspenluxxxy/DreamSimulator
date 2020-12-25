@@ -25,7 +25,7 @@ const supported = (() => {
 })();
 
 if (supported) {
-	document.addEventListener('DOMContentLoaded', function (event) {
+	document.addEventListener('DOMContentLoaded', function () {
 		document.getElementById('start-sim').onclick = function () {
 			if (worker !== null) {
 				console.log('worker stopped');
@@ -33,27 +33,55 @@ if (supported) {
 			}
 			worker = new SimWorker();
 			worker.onerror = function (e) {
-				console.log(e.message, e);
+				console.error(e.message, e);
 			};
 			worker.onmessage = function (e) {
 				document.getElementById(
-					'max-pearls'
-				).textContent = e.data.max_pearls.toString();
-				document.getElementById(
-					'max-rods'
-				).textContent = e.data.max_rods.toString();
+					'iterations'
+				).textContent = e.data.iterations.toLocaleString();
+
 				document.getElementById(
 					'avg-pearls'
 				).textContent = e.data.avg_pearls.toString();
 				document.getElementById(
 					'avg-rods'
 				).textContent = e.data.avg_rods.toString();
+
+				let pearls = e.data.best_pearls;
 				document.getElementById(
-					'iterations'
-				).textContent = e.data.iterations.toString();
+					'best-pearls-pearls'
+				).textContent = pearls.pearls.toString();
+				document.getElementById(
+					'best-pearls-rods'
+				).textContent = pearls.rods.toString();
+				document.getElementById(
+					'best-pearls-iteration'
+				).textContent = pearls.iteration.toLocaleString();
+
+				let rods = e.data.best_rods;
+				document.getElementById(
+					'best-blaze-pearls'
+				).textContent = rods.pearls.toString();
+				document.getElementById(
+					'best-blaze-rods'
+				).textContent = rods.rods.toString();
+				document.getElementById(
+					'best-blaze-iteration'
+				).textContent = rods.iteration.toLocaleString();
+
+				let overall = e.data.best_both;
+				document.getElementById(
+					'best-overall-pearls'
+				).textContent = overall.pearls.toString();
+				document.getElementById(
+					'best-overall-rods'
+				).textContent = overall.rods.toString();
+				document.getElementById(
+					'best-overall-iteration'
+				).textContent = overall.iteration.toLocaleString();
 			};
 			worker.onmessageerror = function (e) {
-				console.log(e.message, e);
+				console.error(e.message, e);
 			};
 			console.log(worker);
 		};
