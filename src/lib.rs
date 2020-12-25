@@ -57,7 +57,7 @@ pub fn simulate_stream() {
 			best_rods.iteration = iterations;
 		}
 
-		if rods > best_both.rods && pearls > best_both.pearls {
+		if rods >= best_both.rods && pearls >= best_both.pearls {
 			best_both.pearls = pearls;
 			best_both.rods = rods;
 			best_both.iteration = iterations;
