@@ -1,0 +1,17 @@
+.big-number {
+    font-size: 1.5rem;
+}
+
+.btn-large:first-child {
+    margin-right: 1rem;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}

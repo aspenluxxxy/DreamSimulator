@@ -1,219 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="See how Dream's speedrun could've never been legit!"
-		/>
-		<meta name="author" content="aspen" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>DreamSimulator</title>
-		<link rel="stylesheet" type="text/css" href="dreamsim.css" />
-		<script src="main.js"></script>
-	</head>
-	<body>
-		<main class="dreamsim">
-			<h1 class="dreamsim__title">Dream Simulator</h1>
-			<div class="dreamsim__stats">
-				<div class="dreamsim__round">
-					<h2>Best Pearl Run</h2>
-					<div
-						class="dreamsim__stat-container"
-						title="50% chance per blaze"
-					>
-						<img
-							width="48"
-							height="48"
-							style="vertical-align: middle"
-							src="res/blaze.png"
-						/>
-						<p class="dreamsim__stat-text">
-							<span id="best-pearls-rods">0</span> out of 305
-						</p>
-					</div>
-					<div
-						class="dreamsim__stat-container"
-						title="approximate 5% chance per barter"
-					>
-						<img
-							width="48"
-							height="48"
-							style="vertical-align: middle"
-							src="res/pearl.png"
-						/>
-						<p class="dreamsim__stat-text">
-							<span id="best-pearls-pearls">0</span> out of 262
-						</p>
-					</div>
-					<br />
-					<div class="dreamsim__stat-container">
-						<small>
-							Iteration #<span id="best-pearls-iteration">0</span>
-						</small>
-					</div>
-				</div>
-				<div class="dreamsim__round">
-					<h2>Best Combined Run</h2>
-					<div
-						class="dreamsim__stat-container"
-						title="50% chance per blaze"
-					>
-						<img
-							width="48"
-							height="48"
-							style="vertical-align: middle"
-							src="res/blaze.png"
-						/>
-						<p class="dreamsim__stat-text">
-							<span id="best-overall-rods">0</span> out of 305
-						</p>
-					</div>
-					<div
-						class="dreamsim__stat-container"
-						title="approximate 5% chance per barter"
-					>
-						<img
-							width="48"
-							height="48"
-							style="vertical-align: middle"
-							src="res/pearl.png"
-						/>
-						<p class="dreamsim__stat-text">
-							<span id="best-overall-pearls">0</span> out of 262
-						</p>
-					</div>
-					<br />
-					<div class="dreamsim__stat-container">
-						<small>
-							Iteration #<span id="best-overall-iteration"
-								>0</span
-							>
-						</small>
-					</div>
-				</div>
-				<div class="dreamsim__round">
-					<h2>Best Blaze Run</h2>
-					<div
-						class="dreamsim__stat-container"
-						title="50% chance per blaze"
-					>
-						<img
-							width="48"
-							height="48"
-							style="vertical-align: middle"
-							src="res/blaze.png"
-						/>
-						<p class="dreamsim__stat-text">
-							<span id="best-blaze-rods">0</span> out of 305
-						</p>
-					</div>
-					<div
-						class="dreamsim__stat-container"
-						title="approximate 5% chance per barter"
-					>
-						<img
-							width="48"
-							height="48"
-							style="vertical-align: middle"
-							src="res/pearl.png"
-						/>
-						<p class="dreamsim__stat-text">
-							<span id="best-blaze-pearls">0</span> out of 262
-						</p>
-					</div>
-					<br />
-					<div class="dreamsim__stat-container">
-						<small>
-							Iteration #<span id="best-blaze-iteration">0</span>
-						</small>
-					</div>
-				</div>
-				<div class="dreamsim__round">
-					<h2>Dream's Speedrun</h2>
-					<div
-						class="dreamsim__stat-container"
-						title="50% chance per blaze"
-					>
-						<img
-							width="48"
-							height="48"
-							style="vertical-align: middle"
-							src="res/blaze.png"
-						/>
-						<p class="dreamsim__stat-text">211 out of 305</p>
-					</div>
-					<div
-						class="dreamsim__stat-container"
-						title="approximate 5% chance per barter"
-					>
-						<img
-							width="48"
-							height="48"
-							style="vertical-align: middle"
-							src="res/pearl.png"
-						/>
-						<p class="dreamsim__stat-text">42 out of 262</p>
-					</div>
-					<br />
-					<div class="dreamsim__stat-container">
-						<small>
-							<a
-								target="_blank"
-								href="https://www.youtube.com/watch?v=Q4UpX7yIzuE"
-								>1.16 Speedrun</a
-							>
-						</small>
-					</div>
-				</div>
-			</div>
-			<div>
-				<p class="dreamsim__iterations">
-					<span id="iterations" class="dreamsim__iterations-number"
-						>0</span
-					>
-					iterations ran
-				</p>
-				<p class="dreamsim__iterations">
-					Average
-					<span id="avg-pearls" class="dreamsim__iterations-number"
-						>0</span
-					>
-					pearls,
-					<span id="avg-rods" class="dreamsim__iterations-number"
-						>0</span
-					>
-					rods
-				</p>
-			</div>
-			<div class="dreamsim__buttons">
-				<button
-					type="button"
-					class="dreamsim__button dreamsim__button--start"
-					id="start-sim"
-				>
-					Start
-				</button>
-				<button
-					type="button"
-					class="dreamsim__button dreamsim__button--stop"
-					id="stop-sim"
-				>
-					Stop
-				</button>
-			</div>
-		</main>
-	</body>
-	<footer>
-		made by aspen |
-		<a href="https://github.com/aspenluxxxy/DreamSimulator" target="_blank"
-			>source code available on github</a
-		>
-		|
-		<a
-			href="https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)"
-			target="_blank"
-			>licensed under AGPLv3</a
-		>
-	</footer>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream Simulator</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./style.css">
 </html>
+<body class="grey darken-3">
+  <main class="container">
+    <h2 class="white-text center-align">Dream Simulator</h2>
+    <div class="row">
+      <div class="col s12 m6 xl3">
+        <div class="card grey darken-1">
+          <div class="card-content white-text center-align">
+            <div class="card-title">Best Pearl Run</div><img src="img/blaze.png" width="48" height="48">
+            <div><span id="best-pearls-rods">0</span>
+              out of 305
+            </div><img src="img/pearl.png" width="48" height="48">
+            <div><span id="best-pearls-pearls">0</span>
+              out of 262
+            </div>
+          </div>
+          <div class="card-action white-text">
+            <p>Iteration #<span id="best-pearls-iteration">0</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 xl3">
+        <div class="card grey darken-1">
+          <div class="card-content white-text center-align">
+            <div class="card-title">Best Combined Run</div><img src="img/blaze.png" width="48" height="48">
+            <div><span id="best-overall-rods">0</span>
+              out of 305
+            </div><img src="img/pearl.png" width="48" height="48">
+            <div><span id="best-overall-pearls">0</span>
+              out of 262
+            </div>
+          </div>
+          <div class="card-action white-text">
+            <p>Iteration #<span id="best-overall-iteration">0</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 xl3">
+        <div class="card grey darken-1">
+          <div class="card-content white-text center-align">
+            <div class="card-title">Best Blaze Run</div><img src="img/blaze.png" width="48" height="48">
+            <div><span id="best-blaze-rods">0</span>
+              out of 305
+            </div><img src="img/pearl.png" width="48" height="48">
+            <div><span id="best-blaze-pearls">0</span>
+              out of 262
+            </div>
+          </div>
+          <div class="card-action white-text">
+            <p>Iteration #<span id="best-blaze-iteration">0</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 xl3">
+        <div class="card grey darken-1">
+          <div class="card-content white-text center-align">
+            <div class="card-title">Dream's Speedrun</div><img src="img/blaze.png" width="48" height="48">
+            <div><span id="best-pearls-rods">211</span>
+              out of 305
+            </div><img src="img/pearl.png" width="48" height="48">
+            <div><span id="best-pearls-pearls">42</span>
+              out of 262
+            </div>
+          </div>
+          <div class="card-action white-text">
+            <p><a href="https://www.youtube.com/watch?v=Q4UpX7yIzuE" target="_blank">1.16 Speedrun</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="center-align white-text">
+      <div class="total-iterations"><span class="big-number" id="iterations">0</span>
+        iterations ran
+      </div>
+      <div class="averages">
+        Average
+        <span class="big-number" id="avg-pearls">0</span>
+        pearls, <span class="big-number" id="avg-rods">0</span> 
+        rods.
+      </div>
+      <div class="buttons input-field">
+        <button class="btn-large green" id="start-sim">Start</button>
+        <button class="btn-large red" id="stop-sim">Stop</button>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer grey darken-1">
+    <div class="container">
+      <p>Coded with WebAssembly and Rust.</p>
+      <p>
+         The code of this project can be found in Aspen's
+         <a href="https://github.com/aspenluxxxy/DreamSimulator">Gitub repo</a>
+      </p>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">&copy; Aspen and Nola. Licensed under <a href="https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)">AGPL v3</a></div>
+    </div>
+  </footer>
+</body>
